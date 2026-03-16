@@ -66,7 +66,8 @@ def click_random_img_repeat(img, count, start, end):
         ry = random.randint(match.y + margin_y, match.y + match.h - margin_y)
         for i in range(count):
             wait_random(start, end)
-            scr.click(Location(rx,ry))
+            # scr.click(Location(rx,ry))
+            scr.click(img)
         return True
     print("failed to find: "+img)
     return False
@@ -101,20 +102,20 @@ def do_combat_simulation():
         click_random_img("advanced-training.png")
         click_random_img_repeat("simulation-add.png", 4, 0, .5)
     click_random_img("smart-sweep.png")
-    # click_random_img("ok-button.png")
+    click_random_img("ok-button.png")
     click_random_img("combat-bottom-2.png")
 
 def do_combat_simulation_2():
     click_random_img("coalition-drill.png")
     found_in_searcharea = False
-    found_in_searcharea = click_random_img_searcharea_below("petri-dish.png","coalition-drill-attack.png", 500)
+    found_in_searcharea = click_random_img_searcharea_below("petri-dish.png","coalition-drill-attack.png", 300)
     if not found_in_searcharea:
-        found_in_searcharea = click_random_img_searcharea_below("training-keycode.png","coalition-drill-attack.png", 500)
+        found_in_searcharea = click_random_img_searcharea_below("training-keycode.png","coalition-drill-attack.png", 300)
     if not found_in_searcharea:
-        found_in_searcharea = click_random_img_searcharea_below("rapid-growth-disk.png","coalition-drill-attack.png", 500)
+        found_in_searcharea = click_random_img_searcharea_below("rapid-growth-disk.png","coalition-drill-attack.png", 300)
     click_random_img_repeat("simulation-add.png", 4, 0, .5)
     click_random_img("smart-sweep.png")
-    # click_random_img("ok-button.png")
+    click_random_img("ok-button.png")
     click_random_img("combat-bottom-2.png")
     
 
