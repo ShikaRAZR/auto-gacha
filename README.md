@@ -14,7 +14,7 @@ Program
 0. Combat Sim
 1. Complete 3 Combat Simulations (Not including Coalition Drills).
 2. Complete an Auto-Battle.
-2. Collect Hearts--
+2. Collect 5 Hearts.
 3. 3 T-Doll Enhancments--
 4. Perform 3 Enhancements or Developments.
 5. Perform Equipment or Fairy Calibration once.
@@ -26,7 +26,7 @@ Program
 11. Perform an exploration at the Foward Basecamp.
 12. Perform a Capture Operation (either a Standard Capture or Aided Capture).
 13. Perform 2 Doll Productions.
-14. Equipment Production--
+14. Perform 4 Equipment Productions (Includes I.O.P. Special Orders)
 
     Features:
     - Read actual dailies on mission/quest page

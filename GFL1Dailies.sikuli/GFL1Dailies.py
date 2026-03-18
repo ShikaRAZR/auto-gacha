@@ -1,7 +1,8 @@
 import random
 
+# Default Similarity Score is 0.7 (70%)
 # General
-screen = 1
+screen = 3
 Settings.MoveMouseDelay = .5
 Settings.AutoWaitTimeout = 5 # looks for images for 5 seconds
 Settings.OcrTextRead = True
@@ -29,10 +30,10 @@ def click_random_img(img):
 
 def click_random_img_searcharea_below(anchor_img, img, px):
     scr = Screen(screen)
-    anchor = scr.exists(anchor_img)# checks if anchor exists on screen
+    anchor = scr.exists(Pattern(anchor_img).similar(.99))# checks if anchor exists on screen
     if anchor:
         search_area = anchor.below(px) # creates search area based on anchor
-        match = search_area.exists(Pattern(img).similar(0.8)) # checks if img exists in search area
+        match = search_area.exists(Pattern(img).similar(.8)) # checks if img exists in search area
         if match:
             # Create a dynamic margin (10% of the image's width and height)
             margin_x = int(match.w * 0.1)
@@ -117,7 +118,7 @@ def do_combat_simulation_2():
     click_random_img("smart-sweep.png")
     click_random_img("ok-button.png")
     click_random_img("combat-bottom-2.png")
-    
 
-# do_combat_simulation()
-# do_combat_simulation_2()
+
+do_combat_simulation()
+do_combat_simulation_2()
