@@ -9,8 +9,9 @@ Program
 - Select which window to focus on for each respective game
 - Check boxes to select which game to automate
 
-### Girls' Frontline
+---
 
+### Girls' Frontline
 
 - Combat Sim
 
@@ -50,24 +51,32 @@ Perform 2 Doll Productions. ----
     - Read actual dailies on mission/quest page
     - Say what was sucessfully done, what failed, what was skipped
 
+---
+
 ### Later To-Do:
 
 Girls'Frontline Neural Cloud
 Arknights
 
+---
 
 ### Requirements:
-Runs on Linux Wayland/X11, Windows
+Runs on Linux Wayland/X11 (Maybe), Windows
 
+---
 
 ### Setup SikuliX in VSCode
 https://launchpad.net/sikuli/+download
-- sikulixide-2.0.5-win.jar
-- sikulixapi-2.0.5-win.jar
+- sikulixide-2.0.5-win.jar (separate ide)
+- sikulixapi-2.0.5-win.jar (for vscode)
 
-Run Script On Windows (preference, place jar file and script folder in the same directory):
+#### Run Script On Windows 
+- Cancel script: CTRL + ALT + C
+- (preference, place jar file and script folder in the same directory):
     
-    java -jar .\sikulixapi-2.0.5-win.jar -r .\GFL1Dailies.sikuli\
+        java -jar .\sikulixapi-2.0.5-win.jar -r .\GFL1Dailies.sikuli\
+
+---
 
 ### Research
 Programs/Libraries found for automation: 
