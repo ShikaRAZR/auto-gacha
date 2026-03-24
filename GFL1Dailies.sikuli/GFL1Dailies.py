@@ -2,7 +2,7 @@ import random
 
 # Default Similarity Score is 0.7 (70%)
 # General
-screen = 3
+screen = 1
 Settings.MoveMouseDelay = .5
 Settings.AutoWaitTimeout = 5 # looks for images for 5 seconds
 Settings.OcrTextRead = True
@@ -12,9 +12,9 @@ def wait_random(start, end): # start, end arguments are int
     sleep_time = random.uniform(start,end)
     wait(sleep_time)
 
-def click_random_img(img):
+def click_random_img(img, similarity=0.8):
     scr = Screen(screen) # Set screen to search for img
-    match = scr.exists(Pattern(img).similar(0.8)) # check if img exists on screen, can be 80% similar 
+    match = scr.exists(Pattern(img).similar(similarity)) # check if img exists on screen, can be 80% similar 
     if match:
         # Create a dynamic margin (10% of the image's width and height)
         margin_x = int(match.w * 0.1)
@@ -85,7 +85,7 @@ def click_random_word(word):
     return False
 
 # Girl's Frontline - 1080p, windows 11, mumuplayer, gfl snap on top right
-data_mode = 1 # Basic = 1, Intermediate = 2, Advanced = 3
+data_mode = 2 # Basic = 1, Intermediate = 2, Advanced = 3
 def do_combat_simulation():
     if not click_random_img("combat-button.png"):
         if click_random_img("menu-top.png"):
@@ -118,7 +118,25 @@ def do_combat_simulation_2():
     click_random_img("smart-sweep.png")
     click_random_img("ok-button.png")
     click_random_img("combat-bottom-2.png")
+    click_random_img("back.png")
+
+def auto_dailies():
+    if not click_random_img("research-button.png"):
+        if click_random_img("menu-top.png"):
+            click_random_img("menu-top-research.png")
+            click_random_img("component-enhancement.png")
+    # Perform 3 Enhancements or Developments.
+    click_random_img("equipment-enhancement.png")
+    click_random_img("select-equip.png")
+    click_random_img("equipment-icon.png")
+    for i in range(3):
+        click_random_img("research-add.png")
+        click_random_img("ok-button.png", similarity=0.7)
+    # Perform Equipment or Fairy Calibration once.
+    
 
 
-do_combat_simulation()
-do_combat_simulation_2()
+# do_combat_simulation()
+# do_combat_simulation_2()
+auto_dailies()
+
