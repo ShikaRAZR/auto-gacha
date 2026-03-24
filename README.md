@@ -56,5 +56,24 @@ Girls'Frontline Neural Cloud
 Arknights
 
 
-Requirements:
+### Requirements:
 Runs on Linux Wayland/X11, Windows
+
+
+### Setup SikuliX in VSCode
+https://launchpad.net/sikuli/+download
+- sikulixide-2.0.5-win.jar
+- sikulixapi-2.0.5-win.jar
+
+Run Script On Windows (preference, place jar file and script folder in the same directory):
+    
+    java -jar .\sikulixapi-2.0.5-win.jar -r .\GFL1Dailies.sikuli\
+
+### Research
+Programs/Libraries found for automation: 
+- Airtest Project (ADB, Android Debug Bridge)
+- SikuliX
+- PyAutoGUI
+- OpenCV-Python
+- RapidOCR
+- YOLO26 (Deep Learning/AI)
