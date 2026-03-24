@@ -12,27 +12,28 @@ Program
 ---
 
 ### Girls' Frontline
+- Combat Sim-
 
-- Combat Sim
-
-1. Auto
-- Perform 3 Enhancements or Developments.
-- Perform Equipment or Fairy Calibration once.
-- Like 5 players' Dormitories.
-- Give a gift to a T-Doll or Coalition Unit.
-- Complete an Auto-Battle.
-
-2. Passive
+1. Passive
 - Complete 3 Combat Simulations (Not including Coalition Drills).
 - Perform an exploration at the Foward Basecamp.
 - Complete 3 Coalition Drills.
 - Complete 3 Logistics Missions.
+
+2. Auto
+- Perform 3 Enhancements or Developments.-
+- Perform Equipment or Fairy Calibration once.-
+- Like 5 players' Dormitories.-
+- Give a gift to a T-Doll or Coalition Unit.
+- Complete an Auto-Battle.
+- Collect 5 Hearts.-
 
 3. Semi
 - Perform a Capture Operation (either a Standard Capture or Aided Capture).
 - Complete any 2 stages (Auto-Battles are not counted)
 - Perform 3 Resource Recoveries.
 - Perform 4 Equipment Productions (Includes I.O.P. Special Orders). 
+- Use Support Echelons Twice.
 
 4. Ignore
 - Rescure a total of 5 Dolls in any stage
@@ -40,10 +41,7 @@ Program
 - Destroy 50 regular units in victorious battles.
 - Win 8 Battles with S ranks
 
-
-Collect 5 Hearts. ----
 3 T-Doll Enhancments--
-Use Support Echelons Twice. ----
 Defeat Boss--
 Perform 2 Doll Productions. ----
 
