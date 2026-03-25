@@ -24,8 +24,8 @@ Program
 - Perform 3 Enhancements or Developments.-
 - Perform Equipment or Fairy Calibration once.-
 - Like 5 players' Dormitories.-
-- Give a gift to a T-Doll or Coalition Unit.
-- Complete an Auto-Battle.
+- Give a gift to a T-Doll or Coalition Unit.-
+- Complete an Auto-Battle.-
 - Collect 5 Hearts.-
 
 3. Semi
@@ -36,7 +36,7 @@ Program
 - Use Support Echelons Twice.
 
 4. Ignore
-- Rescure a total of 5 Dolls in any stage
+- Rescue a total of 5 Dolls in any stage
 - Obtain 6 Mobile Armor Components.
 - Destroy 50 regular units in victorious battles.
 - Win 8 Battles with S ranks

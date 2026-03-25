@@ -13,7 +13,6 @@ def wait_random(start, end): # start, end arguments are int
     wait(sleep_time)
 
 def click_random_img(img, similarity=0.8, repeat=1, rand_start=0.0, rand_end=0.0):
-    wait(.5) # wait 1 second for screen to load before detection
     scr = Screen(screen) # Set screen to search for img
     match = scr.exists(Pattern(img).similar(similarity)) # check if img exists on screen, can be 80% similar 
     if match:
@@ -25,10 +24,11 @@ def click_random_img(img, similarity=0.8, repeat=1, rand_start=0.0, rand_end=0.0
         rx = random.randint(match.x + margin_x, match.x + match.w - margin_x)
         ry = random.randint(match.y + margin_y, match.y + match.h - margin_y)
         # wait_random(.5,1.5)
-        match.highlight(random.uniform(0.1, 1.0)) # Highlights area detected, also acts like a sleep function
+        match.highlight(0.1) # Highlights area detected, also acts like a sleep function
         for i in range(repeat):
             wait_random(rand_start, rand_end)
             scr.click(Location(rx,ry))
+        wait(random.uniform(0.5, 1.0)) # wait 1 second for screen to load before next detection
         return True
     print("failed to find: "+img)
     return False
@@ -57,11 +57,11 @@ def click_random_img_repeat(img, count, start, end):
 
 
 def click_random_img_searcharea_below(anchor_img, img, px):
-    wait(1)
+    wait(random.uniform(0.5, 1.0))
     scr = Screen(screen)
     anchor = scr.exists(Pattern(anchor_img).similar(.99))# checks if anchor exists on screen
     if anchor:
-        anchor.highlight(random.uniform(0.1, 1.0))
+        anchor.highlight(random.uniform(0.1, 0.5))
         search_area = anchor.below(px) # creates search area based on anchor
         match = search_area.exists(Pattern(img).similar(.8)) # checks if img exists in search area
         if match:
@@ -72,7 +72,7 @@ def click_random_img_searcharea_below(anchor_img, img, px):
             rx = random.randint(match.x + margin_x, match.x + match.w - margin_x)
             ry = random.randint(match.y + margin_y, match.y + match.h - margin_y)
             # wait_random(1,2)
-            match.highlight(random.uniform(0.1, 1.0))
+            match.highlight(random.uniform(0.1, 0.5))
             scr.click(Location(rx,ry))
             return True
         else:
@@ -170,14 +170,14 @@ def auto_dailies_2():
     # Go to Shop
     click_random_img("main-shop")
     wait(5)
-    # Collect 5 Hearts.
+    # Collect 5 Hearts. (Kalina Shop)
     while(exists_similar_img("icon-heart.png")):
         click_random_img("icon-heart.png")
     # Go to Dorm from Shop
     if click_random_img("menu-top.png", similarity=0.6):
         click_random_img("menu-top-dorm.png")
         wait(5)
-    # Collect 5 Hearts.
+    # Collect 5 Hearts. (Dorm)
     while(exists_similar_img("icon-heart.png", similarity=0.6)):
         click_random_img("icon-heart.png", similarity=0.6)
     # Go to Friend Dorms From Dorm
@@ -199,13 +199,43 @@ def auto_dailies_2():
     if click_random_img("menu-top.png", similarity=0.7):
         click_random_img("menu-top-main-menu.png")
         
-
+def auto_dailies_3():
+    # Go to Armory
+    click_random_img("main-armory.png")
+    wait(2)
+    # Give a gift to a T-Doll or Coalition Unit.
+    click_random_img("filter-button.png")
+    click_random_img("filter-below-max.png")
+    click_random_img("filter-confirm-button.png")
+    click_random_img("select-doll.png")
+    click_random_img("add-doll-level.png")
+    click_random_img_searcharea_below("present-combat-report.png", "present.png", 100)
+    click_random_img("add-present.png", repeat=2, rand_start=0.1, rand_end=0.5)
+    click_random_img("ok-button.png")
+    click_random_img("back-doll.png")
+    # Go to Combat Mission Normal Ch.1 from Armory
+    if click_random_img("menu-top.png"):
+        click_random_img("menu-top-combat.png")
+        wait(4)
+        click_random_img("combat-mission.png")
+        wait(1)
+        click_random_img("combat-chapter-1.png")
+        click_random_img("combat-normal-2.png")
+    # Complete an Auto-Battle.
+    click_random_img("combat-chapter-1-1.png")
+    click_random_img("auto-battle-button.png")
+    click_random_img("subtract-auto-battle.png", repeat=2, rand_start=0.1, rand_end=0.5)
+    click_random_img("select-echelon.png")
+    click_random_img("echelon-1.png")
+    click_random_img("ok-button.png")
+    click_random_img("combat-start-button.png")
+    
 
 #do_combat_simulation_1()
 #do_combat_simulation_2()
 #auto_dailies_1()
 #auto_dailies_2()
-
+#auto_dailies_3()
 
 
 
