@@ -30,10 +30,10 @@ Program
 
 3. Semi
 - Perform a Capture Operation (either a Standard Capture or Aided Capture).
-- Complete any 2 stages (Auto-Battles are not counted)
+- Complete any 2 stages (Auto-Battles are not counted)-
 - Perform 3 Resource Recoveries.
 - Perform 4 Equipment Productions (Includes I.O.P. Special Orders). 
-- Use Support Echelons Twice.
+- Use Support Echelons Twice.-
 
 4. Ignore
 - Rescue a total of 5 Dolls in any stage

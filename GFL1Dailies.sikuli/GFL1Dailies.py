@@ -28,7 +28,7 @@ def click_random_img(img, similarity=0.8, repeat=1, rand_start=0.0, rand_end=0.0
         for i in range(repeat):
             wait_random(rand_start, rand_end)
             scr.click(Location(rx,ry))
-        wait(random.uniform(0.5, 1.0)) # wait 1 second for screen to load before next detection
+        wait(random.uniform(0.5, 1.0)) # wait for screen to load before next detection
         return True
     print("failed to find: "+img)
     return False
@@ -105,7 +105,7 @@ def click_random_word(word):
 """
 
 # Girl's Frontline - 1080p, windows 11, mumuplayer, gfl snap on top right
-data_mode = 2 # Basic = 1, Intermediate = 2, Advanced = 3
+data_mode = 3 # Basic = 1, Intermediate = 2, Advanced = 3
 def do_combat_simulation_1():
 
     # Go to Combat Simulation
@@ -208,34 +208,122 @@ def auto_dailies_3():
     click_random_img("filter-below-max.png")
     click_random_img("filter-confirm-button.png")
     click_random_img("select-doll.png")
+    wait(3)
     click_random_img("add-doll-level.png")
     click_random_img_searcharea_below("present-combat-report.png", "present.png", 100)
     click_random_img("add-present.png", repeat=2, rand_start=0.1, rand_end=0.5)
     click_random_img("ok-button.png")
     click_random_img("back-doll.png")
-    # Go to Combat Mission Normal Ch.1 from Armory
+    # Go to Combat Mission from Armory
     if click_random_img("menu-top.png"):
         click_random_img("menu-top-combat.png")
         wait(4)
         click_random_img("combat-mission.png")
         wait(1)
-        click_random_img("combat-chapter-1.png")
-        click_random_img("combat-normal-2.png")
     # Complete an Auto-Battle.
+    if not click_random_img("combat-chapter-1.png"):
+        click_random_img("combat-chapter-ep.png")
+        wheel(WHEEL_UP, 10)
+        wait(2)
+        click_random_img("combat-chapter-1.png")
+    wait(2)
+    click_random_img("combat-normal-2.png")
     click_random_img("combat-chapter-1-1.png")
     click_random_img("auto-battle-button.png")
+    click_random_img("activate-quick-battle.png")
     click_random_img("subtract-auto-battle.png", repeat=2, rand_start=0.1, rand_end=0.5)
     click_random_img("select-echelon.png")
     click_random_img("echelon-1.png")
     click_random_img("ok-button.png")
     click_random_img("combat-start-button.png")
-    
+    click_random_img("ok-button.png")
+    '''
+    if click_random_img("combat-chapter-1.png"):
+        click_random_img("combat-normal-2.png")
+        click_random_img("combat-chapter-1-1.png")
+        click_random_img("auto-battle-button.png")
+        click_random_img("activate-quick-battle.png")
+        click_random_img("subtract-auto-battle.png", repeat=2, rand_start=0.1, rand_end=0.5)
+        click_random_img("select-echelon.png")
+        click_random_img("echelon-1.png")
+        click_random_img("ok-button.png")
+        click_random_img("combat-start-button.png")
+        click_random_img("ok-button.png")
+    if click_random_img("combat-chapter-13.png"):
+        click_random_img("combat-normal-2.png")
+        click_random_img("combat-chapter-13-1.png")
+        click_random_img("auto-battle-button.png")
+        click_random_img("activate-quick-battle.png")
+        click_random_img("subtract-auto-battle.png", repeat=2, rand_start=0.1, rand_end=0.5)
+        click_random_img("select-echelon.png")
+        click_random_img("echelon-2.png")
+        click_random_img("ok-button.png")
+        click_random_img("select-echelon.png")
+        click_random_img("echelon-3.png")
+        click_random_img("ok-button.png")
+        click_random_img("combat-start-button.png")
+        click_random_img("ok-button.png")
+    '''
+    wait(3)
+    # Go to Main Menu
+    click_random_img("back.png")
+    click_random_img("back-auto-battle.png")
+    click_random_img("back.png")
 
-#do_combat_simulation_1()
-#do_combat_simulation_2()
-#auto_dailies_1()
-#auto_dailies_2()
-#auto_dailies_3()
+def semi_dailies_1():
+    if not click_random_img("main-combat.png"):
+        if click_random_img("menu-top.png"):
+            click_random_img("menu-top-combat.png")
+            click_random_img("combat-bottom.png")
+    wait(3)    
+    click_random_img("combat-mission.png")
+    if not click_random_img("combat-chapter-1.png"):
+        click_random_img("combat-chapter-ep.png")
+        wheel(WHEEL_UP, 10)
+        wait(2)
+        click_random_img("combat-chapter-1.png")
+    wait(2)
+    click_random_img("combat-normal-2.png")
+    # Complete any 2 stages (Auto-Battles are not counted)
+    # Use Support Echelons Twice.
+    for i in range(2):
+        click_random_img("combat-chapter-1-1.png")
+        click_random_img("combat-normal-battle.png")
+        wait(2)
+        click_random_img("skip.png")
+        click_random_img("command-post.png")
+        click_random_img("echelon-1.png")
+        click_random_img("ok-button.png")
+        click_random_img("start-operation.png")
+        wait(2)
+        click_random_img("command-post-crop-2.png")
+        click_random_img("command-post-crop-2.png")
+        click_random_img("resupply.png")
+        click_random_img("planning-mode.png")
+        click_random_img("command-post-crop.png")
+        click_random_img("practice-drone.png")
+        click_random_img("execute-plan.png")
+        wait(35)
+        click_random_img("command-post-crop-3.png")
+        click_random_img("support-echelon.png")
+        wait(4)
+        click_random_img("echelon-day.png")
+        click_random_img("ok-button.png")
+        click_random_img("end-round.png")
+        wait(15)
+        click_random_img("skip.png")
+        wait(2)
+        click_random_img("battle-end-top.png", repeat=10, rand_start=0.5, rand_end=1.0)
+        wait(5)
+    click_random_img("back.png")
 
 
+'''
+do_combat_simulation_1()
+do_combat_simulation_2()
+auto_dailies_1()
+auto_dailies_2()
+auto_dailies_3()
+semi_dailies_1()
+'''
 
