@@ -4,8 +4,8 @@ import random
 # Default Similarity Score is 0.7 (70%)
 # General
 screen = 1
-Settings.MoveMouseDelay = .5
-Settings.AutoWaitTimeout = 3 # looks for images for 3 seconds
+Settings.MoveMouseDelay = .1
+Settings.AutoWaitTimeout = 5 # looks for images for 3 seconds
 Settings.OcrTextRead = True
 Settings.OcrTextSearch = True
 

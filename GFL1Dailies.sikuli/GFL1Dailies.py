@@ -117,6 +117,7 @@ def auto_dailies_3():
     click_random_img("select-doll.png")
     wait(3)
     click_random_img("add-doll-level.png")
+    wait(1)
     click_random_img_searcharea_below("present-combat-report.png", "present.png", 100)
     click_random_img("add-present.png", repeat=2, rand_start=0.1, rand_end=0.5)
     click_random_img("ok-button.png")
@@ -184,7 +185,8 @@ def semi_dailies_1():
             click_random_img("combat-bottom.png")
     wait(3)    
     click_random_img("combat-mission.png")
-    if not click_random_img("combat-chapter-1.png"):
+    # if chapter one is not visible or is not selected, scroll to chapter 1
+    if not click_random_img("combat-chapter-1.png") and exists_similar_img("combat-chapter-1-selected.png") is None:
         click_random_img("combat-chapter-ep.png")
         wheel(WHEEL_UP, 10)
         wait(2)
@@ -219,10 +221,11 @@ def semi_dailies_1():
         click_random_img("end-round.png")
         wait(15)
         click_random_img("skip.png")
-        wait(2)
+        wait(3)
         click_random_img("battle-end-top.png", repeat=10, rand_start=0.5, rand_end=1.0)
         wait(5)
     click_random_img("back.png")
+
 
 
 '''

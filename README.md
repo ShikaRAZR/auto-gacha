@@ -70,9 +70,10 @@ Ignore
 - Attempt Algorithm Collection twice
 
 Custom
-- Neural Search Basic
-- Supply Store
+- Neural Search Basic-
+- Supply Store-
 - Check Season Pass
+
 ---
 
 ### Later To-Do:
@@ -97,6 +98,7 @@ https://launchpad.net/sikuli/+download
 - (preference, place jar file and script folder in the same directory):
     
         java -jar .\sikulixapi-2.0.5-win.jar -r .\GFL1Dailies.sikuli\
+        java -jar .\sikulixapi-2.0.5-win.jar -r .\PNCDailies.sikuli\
 
 ---
 
