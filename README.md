@@ -8,6 +8,7 @@ Program
 ### Main Features:
 - Select which window to focus on for each respective game
 - Check boxes to select which game to automate
+- Say what was sucessfully done, what failed, what was skipped
 
 ---
 
@@ -45,10 +46,33 @@ Program
 Defeat Boss--
 Perform 2 Doll Productions. ----
 
-    Features:
-    - Read actual dailies on mission/quest page
-    - Say what was sucessfully done, what failed, what was skipped
+---
 
+### Project Neural Cloud
+
+Passive
+- Log into the game
+- Reach 50 Daily Activity
+
+Auto
+- Upgrade Doll with Combat EXP Once-
+- Collect Oasis Resources Once-
+- Complete 2 Resource Collections-
+- Complete 1 Factory Order-
+- Attempt Fragment Search Twice-
+- Clear Vulnerability Check Once-
+- Spend 150 Keys
+- Clear Exception Protocol Cleanup Once-
+
+Ignore
+- Replenish Keys 1 time
+- Clear Endless Exploration Once
+- Attempt Algorithm Collection twice
+
+Custom
+- Neural Search Basic
+- Supply Store
+- Check Season Pass
 ---
 
 ### Later To-Do:
@@ -58,7 +82,7 @@ Arknights
 
 ---
 
-### Requirements:
+### Compatibility:
 Runs on Linux Wayland/X11 (Maybe), Windows
 
 ---
