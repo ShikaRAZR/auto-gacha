@@ -90,6 +90,7 @@ def auto_dailies_2():
     # Go to Friend Dorms From Dorm
     if click_random_img("dorm-visit-button.png"):
         if click_random_img("dorm-my-friends.png"):
+            wait(2)
             click_random_img("dorm-visit-specific.png")
     wait(3)
     # Like 5 players' Dormitories.
@@ -115,7 +116,7 @@ def auto_dailies_3():
     click_random_img("filter-below-max.png")
     click_random_img("filter-confirm-button.png")
     click_random_img("select-doll.png")
-    wait(3)
+    wait(5)
     click_random_img("add-doll-level.png")
     wait(1)
     click_random_img_searcharea_below("present-combat-report.png", "present.png", 100)
@@ -205,8 +206,8 @@ def semi_dailies_1():
         click_random_img("ok-button.png")
         click_random_img("start-operation.png")
         wait(2)
-        click_random_img("command-post-crop-2.png")
-        click_random_img("command-post-crop-2.png")
+        click_random_img("command-post-crop-2.png", similarity=0.7)
+        click_random_img("command-post-crop-2.png", similarity=0.7)
         click_random_img("resupply.png")
         click_random_img("planning-mode.png")
         click_random_img("command-post-crop.png")
@@ -236,3 +237,4 @@ auto_dailies_2()
 auto_dailies_3()
 semi_dailies_1()
 '''
+click_random_img("combat-mission.png")
