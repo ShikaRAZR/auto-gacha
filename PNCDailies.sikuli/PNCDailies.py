@@ -28,9 +28,10 @@ def auto_dailies_1():
     # Collect Oasis Resources Once
     click_random_img("menu-top.png")
     click_random_img("menu-top-oasis-collect.png")
-    wait(3)
+    wait(5)
     # Complete 2 Resource Collections (Dorm)
     drag_random_img_to_dst("menu-top-operation-system.png", "menu-top-main-system.png")
+    wait(1)
     click_random_img("menu-top-dorm.png")
     wait(3)
     click_random_img("dorm-collect-resources.png")
@@ -45,16 +46,16 @@ def auto_dailies_1():
 
 def auto_dailies_2():
     click_random_img("menu-top.png")
-    drag_random_img_to_dst("menu-top-main-system.png", "menu-top-sub-system.png")
+    drag_random_img_to_dst("menu-top-operation-system.png", "menu-top-sub-system.png")
     wait(1)
     click_random_img("menu-top-explore.png")
-    wait(2)
+    wait(5)
     # Clear Vulnerability Check Once
     click_random_img("vulnerability-check.png")
     click_random_img_searcharea_below("vulnerability-check-T5.png", "vulnerability-quick-battle.png", 100)
     click_random_img("vulnerability-confirm.png")
-    wait(10)
-    click_random_img("vulnerability-end-battle.png")
+    wait(3)
+    click_random_img("menu-top-explore.png", repeat=3, rand_start=0.5, rand_end=1.0)
     click_random_img("menu-top-back.png")
     wait(1)
     # Attempt Fragment Search Twice
@@ -66,7 +67,7 @@ def auto_dailies_2():
     wait(1)
     click_random_img("auto-battle-30.png")
     wait(70)
-    click_random_img("fragment-confirm.png")
+    click_random_img("fragment-confirm.png", auto_wait_timeout=15)
     click_random_img_searcharea_below("fragment-doll-select.png", "fragment-doll-select.png", 100)
     click_random_img("auto-battle.png")
     click_random_img("add.png", repeat=4, rand_start=0.1, rand_end=0.5)
@@ -74,7 +75,7 @@ def auto_dailies_2():
     wait(1)
     click_random_img("auto-battle-30.png")
     wait(50)
-    click_random_img("fragment-confirm.png")
+    click_random_img("fragment-confirm.png", auto_wait_timeout=15)
     click_random_img("menu-top-back.png")
     # Clear Exception Protocol Cleanup Once
     click_random_img("exception-protocol.png")
@@ -85,7 +86,7 @@ def auto_dailies_2():
     click_random_img("exception-planned-mode-off.png")
     click_random_img("exception-execute.png")
     wait(350)
-    click_random_img("exception-back.png")
+    click_random_img("exception-back.png", auto_wait_timeout=15)
     wait(5)
     click_random_img("exception-rewards.png")
     while exists_similar_img("exception-rewards-tap.png") is not None:
@@ -96,13 +97,14 @@ def auto_dailies_2():
     click_random_img("menu-top-back.png")
     wait(1)
     click_random_img("menu-top-back.png")
-    # Spend 150 Keys
+
+
 
 def auto_dailies_3():
     # Supply Store
     click_random_img("menu-top.png")
     click_random_img("menu-top-supplies.png")
-    wait(3)
+    wait(5)
     click_random_img("store-supply-pack.png")
     click_random_img("supply-pack-free.png")
     click_random_img("supply-pack-free-button.png")
@@ -118,29 +120,51 @@ def auto_dailies_3():
             break
         click_random_img("store-top.png", repeat=2, rand_start=0.5, rand_end=1.0)
         wait(1)
-    
     # Neural Search Basic
     click_random_img("menu-top.png")
     click_random_img("menu-top-neural-search.png")
     wait(3)
     click_random_img("neural-search-arrow.png", repeat=4, rand_start=0.5, rand_end=1.0)
-    
     if exists_similar_img("neural-basic-search-menu.png"):
         for i in range(10):
             click_random_img("neural-basic-search-pull.png")
             wait(2)
-            if not click_random_img("neural-search-skip.png"): # If there is no skip button. no pulls are occuring so end loop
+            if not click_random_img("neural-search-skip.png", auto_wait_timeout=1): # If there is no skip button. no pulls are occuring so end loop
                 click_random_img("neural-search-confirm.png")
                 break
             wait(2)
             click_random_img("neural-search-tap.png")
             wait(2)
-        
-    
-# Check Season Pass
+    # Collect Rewards
+    click_random_img("menu-top.png")
+    while exists_similar_img("menu-top-claim-rewards.png"):
+        click_random_img("menu-top-claim-rewards.png")
+    click_random_img("menu-top-operation-system.png")
+    # Check Battle Pass
+    click_random_img("menu-top-battle-pass.png")
+    wait(2)
+    click_random_img("battle-pass-collect.png")
+    click_random_img("battle-pass-confirm.png")
 
+def auto_dailies_4():
+    click_random_img("menu-top.png")
+    click_random_img("menu-top-explore.png")
+    wait(3)
+    # Spend 150 Keys
+    drag_random_img_to_dst("fragment-search.png", "vulnerability-check.png")
+    wait(1)
+    click_random_img("resource-collection.png")
+    click_random_img("resource-exp.png")
+    click_random_img("auto-battle.png")
+    click_random_img("add.png", repeat=10, rand_start=0.1, rand_end=0.5)
+    click_random_img("resource-ready.png")
+    wait(3)
+    click_random_img("auto-battle-30.png")
+    wait(120)
+    click_random_img("fragment-confirm.png", auto_wait_timeout=15)
 
 # click_random_img(".png")
 # auto_dailies_1()
 # auto_dailies_2()
 # auto_dailies_3()
+# auto_dailies_4()

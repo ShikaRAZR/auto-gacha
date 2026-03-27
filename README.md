@@ -72,7 +72,8 @@ Ignore
 Custom
 - Neural Search Basic-
 - Supply Store-
-- Check Season Pass
+- Collect Rewards-
+- Check Battle Pass-
 
 ---
 

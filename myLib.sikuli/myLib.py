@@ -1,5 +1,6 @@
 from sikuli import *
 import random
+import math
 
 # Default Similarity Score is 0.7 (70%)
 # General
@@ -13,7 +14,8 @@ def wait_random(start, end): # start, end arguments are int
     sleep_time = random.uniform(start,end)
     wait(sleep_time)
 
-def click_random_img(img, similarity=0.8, repeat=1, rand_start=0.0, rand_end=0.0):
+def click_random_img(img, similarity=0.8, repeat=1, rand_start=0.0, rand_end=0.0, auto_wait_timeout=5):
+    Settings.AutoWaitTimeout = auto_wait_timeout
     scr = Screen(screen) # Set screen to search for img
     match = scr.exists(Pattern(img).similar(similarity)) # check if img exists on screen, can be 80% similar 
     if match:
@@ -46,7 +48,8 @@ def drag_random_img_to_dst(img1, img2, similarity=0.8): # Drag Img to Destinatio
         margin2_y = int(match2.h * 0.5)
         rx2 = random.randint(match2.x + margin2_x, match2.x + match2.w - margin2_x)
         ry2 = random.randint(match2.y + margin2_y, match2.y + match2.h - margin2_y)
-        scr.dragDrop(Location(rx1,ry1), Location(rx2,ry2))
+        # scr.dragDrop(Location(rx1,ry1), Location(rx2,ry2))
+        realistic_drag(Location(rx1,ry1), Location(rx2,ry2))
         return True
     return False
     
@@ -73,7 +76,8 @@ def click_random_img_repeat(img, count, start, end):
 """
 
 
-def click_random_img_searcharea_below(anchor_img, img, px):
+def click_random_img_searcharea_below(anchor_img, img, px, auto_wait_timeout=3):
+    setAutoWaitTimeout(auto_wait_timeout)
     wait(random.uniform(0.5, 1.0))
     scr = Screen(screen)
     anchor = scr.exists(Pattern(anchor_img).similar(.99))# checks if anchor exists on screen
@@ -101,7 +105,7 @@ def exists_similar_img(img, similarity=0.8):
     scr = Screen(screen)
     match = scr.exists(Pattern(img).similar(similarity))
     if match:
-        match.highlight(.5, "blue")
+        match.highlight(0.1, "blue")
     else:
         print("img does not exist: "+img)
     return match
@@ -118,3 +122,38 @@ def click_random_word(word):
     print("failed to find: "+word)
     return False
 """
+
+
+def realistic_drag(loc1, loc2, steps=50): # AI
+    Settings.MoveMouseDelay = 0
+    # 1. Initial movement and "Grip"
+    mouseMove(loc1)
+    wait(random.uniform(0.2, 0.4))
+    mouseDown(Button.LEFT)
+    wait(0.1) # Small pause to "engage" the drag
+    
+    # 2. Travel Loop
+    for i in range(1, steps + 1):
+        pct = float(i) / steps
+        
+        # Calculate the direct line
+        target_x = loc1.x + (loc2.x - loc1.x) * pct
+        target_y = loc1.y + (loc2.y - loc1.y) * pct
+        
+        # The Arc: math.sin produces a curve that peaks at 50% progress
+        # 20 is the "height" of the arc in pixels
+        arc_offset = math.sin(pct * math.pi) * 20 
+        
+        # Move the mouse (Subtract arc_offset to curve 'upwards')
+        mouseMove(Location(int(target_x), int(target_y - arc_offset)))
+        
+        # 3. Variable Timing (Humans are slower at the start and end)
+        if pct < 0.2 or pct > 0.8:
+            wait(random.uniform(0.0003, 0.0008)) # Slow zones
+        else:
+            wait(random.uniform(0.0001, 0.0005)) # Fast zone (middle of drag)
+
+    # 4. Release
+    wait(random.uniform(0.1, 0.3))
+    mouseUp(Button.LEFT)
+    Settings.MoveMouseDelay = 0.5
