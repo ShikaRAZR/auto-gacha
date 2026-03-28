@@ -22,7 +22,7 @@ Program
 - Complete 3 Logistics Missions.
 
 2. Auto
-- Perform 3 Enhancements or Developments.-
+- Perform 3 Enhancements or Developments.(FIX ENHANCE DOLLS NOT EQUIPMENT)
 - Perform Equipment or Fairy Calibration once.-
 - Like 5 players' Dormitories.-
 - Give a gift to a T-Doll or Coalition Unit.-

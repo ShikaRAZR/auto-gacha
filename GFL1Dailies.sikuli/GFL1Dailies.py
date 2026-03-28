@@ -41,11 +41,11 @@ def do_combat_simulation_2():
     # Coalition Drill
     click_random_img("coalition-drill.png")
     found_in_searcharea = False
-    found_in_searcharea = click_random_img_searcharea_below("petri-dish.png","coalition-drill-attack.png", 300)
+    found_in_searcharea = click_random_img_searcharea_below("petri-dish.png","coalition-drill-attack.png", 300, similarity=0.99)
     if not found_in_searcharea:
-        found_in_searcharea = click_random_img_searcharea_below("training-keycode.png","coalition-drill-attack.png", 300)
+        found_in_searcharea = click_random_img_searcharea_below("training-keycode.png","coalition-drill-attack.png", 300, similarity=0.99)
     if not found_in_searcharea:
-        found_in_searcharea = click_random_img_searcharea_below("rapid-growth-disk.png","coalition-drill-attack.png", 300)
+        found_in_searcharea = click_random_img_searcharea_below("rapid-growth-disk.png","coalition-drill-attack.png", 300, similarity=0.99)
     click_random_img("add-simulation.png", repeat=4, rand_start=0.1, rand_end=0.5)
     click_random_img("smart-sweep.png")
     click_random_img("ok-button.png")
@@ -58,7 +58,7 @@ def auto_dailies_1():
         if click_random_img("menu-top.png"):
             click_random_img("menu-top-research.png")
             click_random_img("component-enhancement.png")
-    # Perform 3 Enhancements or Developments.
+    # Perform 3 Enhancements or Developments. (WRONG)
     click_random_img("equipment-enhancement.png")
     click_random_img("select-equip.png")
     click_random_img("icon-equipment.png")
@@ -116,10 +116,11 @@ def auto_dailies_3():
     click_random_img("filter-below-max.png")
     click_random_img("filter-confirm-button.png")
     click_random_img("select-doll.png")
-    wait(5)
+    wait(2)
     click_random_img("add-doll-level.png")
     wait(1)
     click_random_img_searcharea_below("present-combat-report.png", "present.png", 100)
+    wait(1)
     click_random_img("add-present.png", repeat=2, rand_start=0.1, rand_end=0.5)
     click_random_img("ok-button.png")
     click_random_img("back-doll.png")
