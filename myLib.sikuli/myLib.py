@@ -76,15 +76,15 @@ def click_random_img_repeat(img, count, start, end):
 """
 
 
-def click_random_img_searcharea_below(anchor_img, img, px, auto_wait_timeout=3):
+def click_random_img_searcharea_below(anchor_img, img, px, similarity=0.8, auto_wait_timeout=3):
     setAutoWaitTimeout(auto_wait_timeout)
     wait(random.uniform(0.5, 1.0))
     scr = Screen(screen)
-    anchor = scr.exists(Pattern(anchor_img).similar(.99))# checks if anchor exists on screen
+    anchor = scr.exists(Pattern(anchor_img).similar(similarity))# checks if anchor exists on screen
     if anchor:
         anchor.highlight(random.uniform(0.1, 0.5))
         search_area = anchor.below(px) # creates search area based on anchor
-        match = search_area.exists(Pattern(img).similar(.8)) # checks if img exists in search area
+        match = search_area.exists(Pattern(img).similar(similarity)) # checks if img exists in search area
         if match:
             # Create a dynamic margin (10% of the image's width and height)
             margin_x = int(match.w * 0.1)
@@ -101,14 +101,33 @@ def click_random_img_searcharea_below(anchor_img, img, px, auto_wait_timeout=3):
     print("failed to find anchor: "+anchor_img)
     return False
 
-def exists_similar_img(img, similarity=0.8):
+def exists_similar_img(img, similarity=0.8, auto_wait_timeout=2):
+    setAutoWaitTimeout(auto_wait_timeout)
     scr = Screen(screen)
     match = scr.exists(Pattern(img).similar(similarity))
     if match:
         match.highlight(0.1, "blue")
+        return True
     else:
         print("img does not exist: "+img)
-    return match
+        return False
+
+def exist_similar_img_searcharea_below(anchor_img, img, px, similarity=0.8, auto_wait_timeout=2):
+    setAutoWaitTimeout(auto_wait_timeout)
+    scr = Screen(screen)
+    anchor = scr.exists(Pattern(anchor_img).similar(similarity))# checks if anchor exists on screen
+    if anchor:
+        anchor.highlight(0.1, "blue")
+        search_area = anchor.below(px) # creates search area based on anchor
+        match = search_area.exists(Pattern(img).similar(similarity)) # checks if img exists in search area
+        if match:
+            match.highlight(0.1, "blue")
+            return True
+        else:
+            print("failed to find: "+img)
+            return False
+    print("failed to find anchor: "+anchor_img)
+    return False
 
 """
 def click_random_word(word):

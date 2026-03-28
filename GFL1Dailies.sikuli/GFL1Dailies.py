@@ -127,7 +127,7 @@ def auto_dailies_3():
     if click_random_img("menu-top.png"):
         click_random_img("menu-top-combat.png")
         wait(4)
-        click_random_img("combat-mission.png")
+        click_random_img("combat-mission-unselected.png", auto_wait_timeout=5)
         wait(1)
     # Complete an Auto-Battle.
     if not click_random_img("combat-chapter-1.png"):
@@ -184,10 +184,10 @@ def semi_dailies_1():
         if click_random_img("menu-top.png"):
             click_random_img("menu-top-combat.png")
             click_random_img("combat-bottom.png")
-    wait(3)    
-    click_random_img("combat-mission.png")
-    # if chapter one is not visible or is not selected, scroll to chapter 1
-    if not click_random_img("combat-chapter-1.png") and exists_similar_img("combat-chapter-1-selected.png") is None:
+    wait(3)
+    click_random_img("combat-mission-unselected.png", auto_wait_timeout=3)
+    # if chapter one is not clicked or is not selected, scroll to chapter 1
+    if not click_random_img("combat-chapter-1.png") and exists_similar_img("combat-chapter-1-selected.png") is False:
         click_random_img("combat-chapter-ep.png")
         wheel(WHEEL_UP, 10)
         wait(2)
@@ -237,4 +237,3 @@ auto_dailies_2()
 auto_dailies_3()
 semi_dailies_1()
 '''
-click_random_img("combat-mission.png")
