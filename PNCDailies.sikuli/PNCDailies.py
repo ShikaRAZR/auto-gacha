@@ -18,7 +18,7 @@ def auto_dailies_1():
         click_random_img("menu-top.png")
         click_random_img("menu-top-doll-info.png")
     wait(3)
-    while exists_similar_img("doll-sort-low-level.png", similarity=0.99) is None:
+    while not exists_similar_img("doll-sort-low-level.png", similarity=0.99):
         click_random_img("doll-sort-level.png")
     click_random_img("doll-select-specific.png")
     wait(1)
@@ -68,7 +68,7 @@ def auto_dailies_2():
         click_random_img("auto-battle-30.png")
         wait(70)
         click_random_img("fragment-confirm.png", auto_wait_timeout=15)
-    if click_random_img_searcharea_below("fragment-doll-select.png", "fragment-doll-select.png", 100, similarity=0.9):
+    if click_random_img_searcharea_below("fragment-doll-select.png", "fragment-doll-select.png", 300, similarity=0.9):
         click_random_img("auto-battle.png")
         click_random_img("add.png", repeat=4, rand_start=0.1, rand_end=0.5)
         click_random_img("fragment-ready.png")
@@ -76,7 +76,7 @@ def auto_dailies_2():
         click_random_img("auto-battle-30.png")
         wait(50)
         click_random_img("fragment-confirm.png", auto_wait_timeout=15)
-        click_random_img("menu-top-back.png")
+    click_random_img("menu-top-back.png")
     # Clear Exception Protocol Cleanup Once
     click_random_img("exception-protocol.png")
     click_random_img("exception-exploration-protocol.png")
@@ -89,7 +89,7 @@ def auto_dailies_2():
     click_random_img("exception-back.png", auto_wait_timeout=15)
     wait(5)
     click_random_img("exception-rewards.png")
-    while exists_similar_img("exception-rewards-tap.png") is not None:
+    while exists_similar_img("exception-rewards-tap.png"):
         click_random_img("exception-rewards-tap.png")
     while exists_similar_img("exception-reward-box.png", similarity=0.99):
         click_random_img("exception-reward-box.png", similarity=0.99)
@@ -155,7 +155,7 @@ def auto_dailies_4():
     # Spend 150 Keys
     drag_random_img_to_dst("fragment-search.png", "vulnerability-check.png")
     wait(1)
-    click_random_img("resource-collection.png")
+    click_random_img("resource-collection.png", similarity=0.9)
     if click_random_img("resource-skill.png"):
         click_random_img("auto-battle.png")
         click_random_img("add.png")

@@ -61,7 +61,7 @@ Auto
 - Complete 1 Factory Order-
 - Attempt Fragment Search Twice-
 - Clear Vulnerability Check Once-
-- Spend 150 Keys
+- Spend 150 Keys-
 - Clear Exception Protocol Cleanup Once-
 
 Ignore
