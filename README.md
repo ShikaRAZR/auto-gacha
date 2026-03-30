@@ -59,7 +59,7 @@ Auto
 - Collect Oasis Resources Once-
 - Complete 2 Resource Collections-
 - Complete 1 Factory Order-
-- Attempt Fragment Search Twice-
+- Attempt Fragment Search Twice(100% PROGRESS MORE DOLLS)
 - Clear Vulnerability Check Once-
 - Spend 150 Keys-
 - Clear Exception Protocol Cleanup Once-

@@ -20,6 +20,7 @@ def do_combat_simulation_1():
         if click_random_img("menu-top.png"):
             click_random_img("menu-top-combat.png")
             click_random_img("combat-bottom.png")
+    wait(1)
     click_random_img("combat-simulation-unselected.png")
 
     # Data Mode
@@ -41,11 +42,12 @@ def do_combat_simulation_2():
     # Coalition Drill
     click_random_img("coalition-drill.png")
     found_in_searcharea = False
-    found_in_searcharea = click_random_img_searcharea_below("petri-dish.png","coalition-drill-attack.png", 300, similarity=0.99)
+    found_in_searcharea = click_random_img_searcharea_below("petri-dish.png","coalition-drill-attack.png", 300, anchor_similarity=0.99)
     if not found_in_searcharea:
-        found_in_searcharea = click_random_img_searcharea_below("training-keycode.png","coalition-drill-attack.png", 300, similarity=0.99)
+        found_in_searcharea = click_random_img_searcharea_below("training-keycode.png","coalition-drill-attack.png", 300, anchor_similarity=0.99)
     if not found_in_searcharea:
-        found_in_searcharea = click_random_img_searcharea_below("rapid-growth-disk.png","coalition-drill-attack.png", 300, similarity=0.99)
+        found_in_searcharea = click_random_img_searcharea_below("rapid-growth-disk.png","coalition-drill-attack.png", 300, anchor_similarity=0.99)
+    wait(1)
     click_random_img("add-simulation.png", repeat=4, rand_start=0.1, rand_end=0.5)
     click_random_img("smart-sweep.png")
     click_random_img("ok-button.png")
@@ -83,7 +85,7 @@ def auto_dailies_2():
     # Go to Dorm from Shop
     if click_random_img("menu-top.png", similarity=0.6):
         click_random_img("menu-top-dorm.png")
-        wait(5)
+        wait(8)
     # Collect 5 Hearts. (Dorm)
     while(exists_similar_img("icon-heart.png", similarity=0.6)):
         click_random_img("icon-heart.png", similarity=0.6)
@@ -238,3 +240,9 @@ auto_dailies_2()
 auto_dailies_3()
 semi_dailies_1()
 '''
+do_combat_simulation_1()
+do_combat_simulation_2()
+auto_dailies_1()
+auto_dailies_2()
+auto_dailies_3()
+semi_dailies_1()

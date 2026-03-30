@@ -39,10 +39,10 @@ def auto_dailies_1():
     click_random_img("menu-top.png")
     click_random_img("menu-top-factory.png")
     wait(3)
-    click_random_img("factory-recieve-all.png")
-    wait(1)
-    click_random_img("menu-top-back.png")
-    click_random_img("factory-repeat-order.png")
+    if click_random_img("factory-recieve-all.png"):
+        wait(1)
+        click_random_img("menu-top-back.png")
+        click_random_img("factory-repeat-order.png")
 
 def auto_dailies_2():
     click_random_img("menu-top.png")
@@ -52,12 +52,13 @@ def auto_dailies_2():
     wait(5)
     # Clear Vulnerability Check Once
     click_random_img("vulnerability-check.png")
-    click_random_img_searcharea_below("vulnerability-check-T5.png", "vulnerability-quick-battle.png", 100, similarity=0.9)
+    click_random_img_searcharea_below("vulnerability-check-T5.png", "vulnerability-quick-battle.png", 100, anchor_similarity=0.9, img_similarity=0.9)
     click_random_img("vulnerability-confirm.png")
     wait(3)
     click_random_img("vulnerability-check-bottom.png", repeat=3, rand_start=0.5, rand_end=1.0)
     click_random_img("menu-top-back.png")
     wait(1)
+    '''
     # Attempt Fragment Search Twice
     click_random_img("fragment-search.png")
     if click_random_img("fragment-doll-select.png", similarity=0.9):
@@ -77,25 +78,29 @@ def auto_dailies_2():
         wait(50)
         click_random_img("fragment-confirm.png", auto_wait_timeout=15)
     click_random_img("menu-top-back.png")
+    '''
     # Clear Exception Protocol Cleanup Once
     click_random_img("exception-protocol.png")
-    click_random_img("exception-exploration-protocol.png")
-    click_random_img("exception-ready.png")
-    click_random_img("exception-start.png")
-    wait(10)
-    click_random_img("exception-planned-mode-off.png")
-    click_random_img("exception-execute.png")
-    wait(350)
-    click_random_img("exception-back.png", auto_wait_timeout=15)
-    wait(5)
-    click_random_img("exception-rewards.png")
-    while exists_similar_img("exception-rewards-tap.png"):
-        click_random_img("exception-rewards-tap.png")
-    while exists_similar_img("exception-reward-box.png", similarity=0.99):
-        click_random_img("exception-reward-box.png", similarity=0.99)
-    click_random_img("exception-reward-box.png", repeat=4, rand_start=0.5, rand_end=1.0)
-    click_random_img("menu-top-back.png")
-    wait(1)
+    if not exists_similar_img("exception-complete.png"):
+        click_random_img("exception-exploration-protocol.png")
+        wait(1)
+        click_random_img("exception-ready.png")
+        wait(1)
+        click_random_img("exception-start.png")
+        wait(10)
+        click_random_img("exception-planned-mode-off.png")
+        click_random_img("exception-execute.png")
+        wait(350)
+        click_random_img("exception-back.png", auto_wait_timeout=15)
+        wait(5)
+        click_random_img("exception-rewards.png")
+        while exists_similar_img("exception-rewards-tap.png"):
+            click_random_img("exception-rewards-tap.png")
+        while exists_similar_img("exception-reward-box.png", similarity=0.99):
+            click_random_img("exception-reward-box.png", similarity=0.99)
+        click_random_img("exception-reward-box.png", repeat=4, rand_start=0.5, rand_end=1.0)
+        click_random_img("menu-top-back.png")
+        wait(1)
     click_random_img("menu-top-back.png")
 
 
@@ -107,6 +112,10 @@ def auto_dailies_3():
     wait(5)
     click_random_img("store-supply-pack.png")
     if click_random_img("supply-pack-free.png", auto_wait_timeout=2):
+        click_random_img("supply-pack-free-button.png")
+        click_random_img("store-top.png", repeat=2, rand_start=0.5, rand_end=1.0)
+        wait(1)
+    if click_random_img("supply-pack-free-weekly.png", auto_wait_timeout=2):
         click_random_img("supply-pack-free-button.png")
         click_random_img("store-top.png", repeat=2, rand_start=0.5, rand_end=1.0)
         wait(1)
@@ -172,7 +181,7 @@ def auto_dailies_4():
         click_random_img("auto-battle-30.png")
         wait(120)
         click_random_img("fragment-confirm.png", auto_wait_timeout=15)
-
+    click_random_img("menu-top.png")
 '''
 click_random_img(".png")
 auto_dailies_1()
@@ -180,3 +189,7 @@ auto_dailies_2()
 auto_dailies_3()
 auto_dailies_4()
 '''
+auto_dailies_1()
+auto_dailies_2()
+auto_dailies_3()
+auto_dailies_4()
