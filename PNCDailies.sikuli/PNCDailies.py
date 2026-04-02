@@ -50,6 +50,8 @@ def auto_dailies_2():
     wait(1)
     click_random_img("menu-top-explore.png")
     wait(5)
+    click_random_img("resource.png")
+    wait(1)
     # Clear Vulnerability Check Once
     click_random_img("vulnerability-check.png")
     click_random_img_searcharea_below("vulnerability-check-T5.png", "vulnerability-quick-battle.png", 100, anchor_similarity=0.9, img_similarity=0.9)

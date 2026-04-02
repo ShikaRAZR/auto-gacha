@@ -74,6 +74,7 @@ def auto_dailies_1():
     click_random_img("calibration-button.png")
     # Go to Main Menu
     click_random_img("back.png")
+    wait(3)
     
 def auto_dailies_2():
     # Go to Shop
