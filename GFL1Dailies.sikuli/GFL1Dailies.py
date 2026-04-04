@@ -78,7 +78,7 @@ def auto_dailies_1():
     
 def auto_dailies_2():
     # Go to Shop
-    click_random_img("main-shop")
+    click_random_img("main-shop.png")
     wait(5)
     # Collect 5 Hearts. (Kalina Shop)
     while(exists_similar_img("icon-heart.png")):

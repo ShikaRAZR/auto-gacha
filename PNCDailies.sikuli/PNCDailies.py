@@ -121,6 +121,10 @@ def auto_dailies_3():
         click_random_img("supply-pack-free-button.png")
         click_random_img("store-top.png", repeat=2, rand_start=0.5, rand_end=1.0)
         wait(1)
+    if click_random_img("supply-pack-free-monthly.png", auto_wait_timeout=2):
+        click_random_img("supply-pack-free-button.png")
+        click_random_img("store-top.png", repeat=2, rand_start=0.5, rand_end=1.0)
+        wait(1)
     click_random_img("store-supply-pack-selected.png")
     wheel(WHEEL_DOWN, 10)
     wait(2)
