@@ -60,7 +60,6 @@ def auto_dailies_2():
     click_random_img("vulnerability-check-bottom.png", repeat=3, rand_start=0.5, rand_end=1.0)
     click_random_img("menu-top-back.png")
     wait(1)
-    '''
     # Attempt Fragment Search Twice
     click_random_img("fragment-search.png")
     if click_random_img("fragment-doll-select.png", similarity=0.9):
@@ -71,7 +70,7 @@ def auto_dailies_2():
         click_random_img("auto-battle-30.png")
         wait(70)
         click_random_img("fragment-confirm.png", auto_wait_timeout=15)
-    if click_random_img_searcharea_below("fragment-doll-select.png", "fragment-doll-select.png", 300, similarity=0.9):
+    if click_random_img_searcharea_below("fragment-doll-select.png", "fragment-doll-select.png", 300, anchor_similarity=0.9, img_similarity=0.9):
         click_random_img("auto-battle.png")
         click_random_img("add.png", repeat=4, rand_start=0.1, rand_end=0.5)
         click_random_img("fragment-ready.png")
@@ -80,7 +79,6 @@ def auto_dailies_2():
         wait(50)
         click_random_img("fragment-confirm.png", auto_wait_timeout=15)
     click_random_img("menu-top-back.png")
-    '''
     # Clear Exception Protocol Cleanup Once
     click_random_img("exception-protocol.png")
     if not exists_similar_img("exception-complete.png"):
