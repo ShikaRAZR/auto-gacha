@@ -23,6 +23,7 @@ Program
 
 2. Auto
 - Perform 3 Enhancements or Developments.(FIX ENHANCE DOLLS NOT EQUIPMENT)
+- Perform 3 Equipment or Fairy Enhancements.
 - Perform Equipment or Fairy Calibration once.-
 - Like 5 players' Dormitories.-
 - Give a gift to a T-Doll or Coalition Unit.-
@@ -100,6 +101,11 @@ https://launchpad.net/sikuli/+download
     
         java -jar .\sikulixapi-2.0.5-win.jar -r .\GFL1Dailies.sikuli\
         java -jar .\sikulixapi-2.0.5-win.jar -r .\PNCDailies.sikuli\
+> Windows
+
+        java -jar ./sikulixapi-2.0.5-lux.jar -r ./GFL1Dailies.sikuli/
+        java -jar ./sikulixapi-2.0.5-lux.jar -r ./PNCDailies.sikuli/
+> Linux
 
 ---
 
