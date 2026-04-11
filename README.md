@@ -110,6 +110,10 @@ https://github.com/casualsnek/waydroid_script
 > Install magisk > Magisk Delta > Settings (Cog) > App-Hide the Magisk app
 
 https://github.com/AnkuLua/AnkuLuaAPK
+https://ankulua.boards.net/board/8/tutorials
+
+sudo mount --bind ~/Documents/Scripts ~/.local/share/waydroid/data/media/0/Download/Scripts
+> Import scripts (Doesnt Work)
 
 ---
 
