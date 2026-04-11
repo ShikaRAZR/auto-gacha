@@ -1,1 +1,3 @@
-click("images/test.png")
+dofile("myLib.lua")
+
+click_random_img("test.png")
