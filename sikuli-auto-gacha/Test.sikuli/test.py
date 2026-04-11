@@ -11,4 +11,4 @@ if not myPath in sys.path:
 # Now you can import your library
 from myLib import *
 
-click_random_img("test.png")
+click_random_img("test2.png")

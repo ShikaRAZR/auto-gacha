@@ -4,6 +4,7 @@ Automating gacha dailies for certain games.
 
 Program
 - Sikulix (python, java)
+- AnkuLua
 
 ### Main Features:
 - Select which window to focus on for each respective game
@@ -85,11 +86,6 @@ Arknights
 
 ---
 
-### Compatibility:
-Runs on Linux Wayland/X11 (Maybe), Windows
-
----
-
 ### Setup SikuliX in VSCode
 https://launchpad.net/sikuli/+download
 - sikulixide-2.0.5-win.jar (separate ide)
@@ -99,13 +95,21 @@ https://launchpad.net/sikuli/+download
 - Cancel script: CTRL + ALT + C
 - (preference, place jar file and script folder in the same directory):
     
-        java -jar .\sikulixapi-2.0.5-win.jar -r .\GFL1Dailies.sikuli\
-        java -jar .\sikulixapi-2.0.5-win.jar -r .\PNCDailies.sikuli\
+        java -jar .\sikuli\sikulixapi-2.0.5-win.jar -r .\sikuli\GFL1Dailies.sikuli\
+        java -jar .\sikuli\sikulixapi-2.0.5-win.jar -r .\sikuli\PNCDailies.sikuli\
 > Windows
 
-        java -jar ./sikulixapi-2.0.5-lux.jar -r ./GFL1Dailies.sikuli/
-        java -jar ./sikulixapi-2.0.5-lux.jar -r ./PNCDailies.sikuli/
+        java -jar ./sikuli/sikulixapi-2.0.5-lux.jar -r ./sikuli/GFL1Dailies.sikuli/
+        java -jar ./sikuli/sikulixapi-2.0.5-lux.jar -r ./sikuli/PNCDailies.sikuli/
 > Linux
+
+---
+### Setup AnkuLua in Waydroid:
+
+https://github.com/casualsnek/waydroid_script
+> Install magisk > Magisk Delta > Settings (Cog) > App-Hide the Magisk app
+
+https://github.com/AnkuLua/AnkuLuaAPK
 
 ---
 
@@ -113,6 +117,7 @@ https://launchpad.net/sikuli/+download
 Programs/Libraries found for automation: 
 - Airtest Project (ADB, Android Debug Bridge)
 - SikuliX
+- AnkuLua
 - PyAutoGUI
 - OpenCV-Python
 - RapidOCR
