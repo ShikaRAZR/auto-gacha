@@ -192,4 +192,4 @@ function realistic_drag(loc1, loc2, steps) -- AI
     wait(0.1 + math.random() * (0.3 - 0.1))
     mouseUp(Button.LEFT)
 end
-]]--
+]]
