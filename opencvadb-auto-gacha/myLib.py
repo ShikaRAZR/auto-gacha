@@ -184,98 +184,6 @@ def find_template(
     # return cx, cy
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def find_template_homography(
-    screen_bgr: np.ndarray,
-    tmpl_bgr: np.ndarray,
-    orb,
-    min_matches: int = MIN_MATCHES,
-    distance_cap: int = DISTANCE_CAP,
-) -> tuple[int, int] | None:
-    """
-    More accurate version: uses RANSAC homography to filter false matches
-    and computes the projected center of the template bounding box.
-    Use this when find_template() gives false positives.
-    """
-    kp_tmpl, des_tmpl = extract_features(orb, tmpl_bgr)
-    kp_screen, des_screen = extract_features(orb, screen_bgr)
-
-    if des_tmpl is None or des_screen is None:
-        return None
-
-    matcher = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
-    matches = matcher.match(des_tmpl, des_screen)
-    good = [m for m in matches if m.distance < distance_cap]
-
-    if len(good) < min_matches:
-        print(f"  Not enough matches ({len(good)}/{min_matches})")
-        return None
-
-    tmpl_pts = np.float32(
-        [kp_tmpl[m.queryIdx].pt for m in good]
-    ).reshape(-1, 1, 2)
-    screen_pts = np.float32(
-        [kp_screen[m.trainIdx].pt for m in good]
-    ).reshape(-1, 1, 2)
-
-    H, mask = cv2.findHomography(tmpl_pts, screen_pts, cv2.RANSAC, 5.0)
-
-    if H is None:
-        print("  Homography failed — matches may be scattered")
-        return None
-
-    inliers = int(mask.sum())
-    print(f"  RANSAC inliers: {inliers}/{len(good)}")
-    if inliers < 6:
-        return None
-
-    # Project the four corners of the template into screen space
-    h, w = tmpl_bgr.shape[:2]
-    corners = np.float32([[0, 0], [w, 0], [w, h], [0, h]]).reshape(-1, 1, 2)
-    projected = cv2.perspectiveTransform(corners, H).reshape(-1, 2)
-
-    cx = int(np.mean(projected[:, 0]))
-    cy = int(np.mean(projected[:, 1]))
-    return cx, cy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def save_debug_image(
     screen_bgr: np.ndarray,
     template_bgr: np.ndarray,
@@ -283,7 +191,7 @@ def save_debug_image(
     center: tuple[int, int] | None,
     path=os.path.expanduser("~/Downloads/Waydroid_Test/screen_debug.png"),
     min_matches: int = 12, 
-    distance_cap: int = 65,
+    distance_cap: int = 55,
 ):
     """Draw matches and save to disk for inspection."""
     kp_tmpl, des_tmpl = extract_features(orb, template_bgr)
