@@ -95,13 +95,13 @@ https://launchpad.net/sikuli/+download
 - Cancel script: CTRL + ALT + C
 - (preference, place jar file and script folder in the same directory):
     
-        java -jar .\sikuli\sikulixapi-2.0.5-win.jar -r .\sikuli\GFL1Dailies.sikuli\
-        java -jar .\sikuli\sikulixapi-2.0.5-win.jar -r .\sikuli\PNCDailies.sikuli\
+        java -jar .\sikuli-auto-gacha\sikulixapi-2.0.5-win.jar -r .\sikuli-auto-gacha\GFL1Dailies.sikuli\
+        java -jar .\sikuli-auto-gacha\sikulixapi-2.0.5-win.jar -r .\sikuli-auto-gacha\PNCDailies.sikuli\
 > Windows
 
-        java -jar ./sikuli/sikulixapi-2.0.5-lux.jar -r ./sikuli/GFL1Dailies.sikuli/
-        java -jar ./sikuli/sikulixapi-2.0.5-lux.jar -r ./sikuli/PNCDailies.sikuli/
-> Linux
+        java -jar ./ankulua-auto-gacha/sikulixapi-2.0.5-lux.jar -r ./ankulua-auto-gacha/GFL1Dailies.sikuli/
+        java -jar ./ankulua-auto-gacha/sikulixapi-2.0.5-lux.jar -r ./ankulua-auto-gacha/PNCDailies.sikuli/
+> Linux (X11 only i think)
 
 ---
 ### Setup AnkuLua in Waydroid:
@@ -113,10 +113,16 @@ https://github.com/AnkuLua/AnkuLuaAPK
 https://ankulua.boards.net/board/8/tutorials
 
 sudo mount --bind ~/Documents/Scripts ~/.local/share/waydroid/data/media/0/Download/Scripts
-> Import scripts (Doesnt Work)
+> Mount (Doesnt Work)
+> Import scripts
 
 ---
-
+### Setup Python + OpenCV (ORB) + ADB
+```
+sudo pacman -S android-tools python uv
+uv run --with opencv-python-headless --with numpy main.py
+```
+> Download tools, uv makes virtual environment in its own bin and runs the script (```uv cache clean``` to remove it)
 ### Research
 Programs/Libraries found for automation: 
 - Airtest Project (ADB, Android Debug Bridge)

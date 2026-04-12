@@ -1,7 +1,7 @@
 
 -- Default Similarity Score is 0.7 (70%)
 -- General
-Settings:setCompareDimension(true, 1280) -- if your screenshots were from a 1280px wide screen
+Settings:setCompareDimension(true, 1280) -- resolution width of screen when you saved screenshots (1280px)
 Settings:setScriptDimension(true, 1280) -- the resolution width of your current device
 Settings:set("AutoWaitTimeout", 5) -- looks for images for 5 seconds
 
