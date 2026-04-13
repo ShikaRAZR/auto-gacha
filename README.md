@@ -3,8 +3,9 @@
 Automating gacha dailies for certain games.
 
 Program
-- Sikulix (python, java)
-- AnkuLua
+- Sikulix (python, java) (Discontinued)
+- AnkuLua (Discontinued)
+- Python, OpenCV, ADB
 
 ### Main Features:
 - Select which window to focus on for each respective game
@@ -104,6 +105,7 @@ https://launchpad.net/sikuli/+download
 > Linux (X11 only i think)
 
 ---
+
 ### Setup AnkuLua in Waydroid:
 
 https://github.com/casualsnek/waydroid_script
@@ -117,12 +119,14 @@ sudo mount --bind ~/Documents/Scripts ~/.local/share/waydroid/data/media/0/Downl
 > Import scripts
 
 ---
-### Setup Python + OpenCV (ORB) + ADB
+
+### Setup Python + OpenCV + ADB
 ```
 sudo pacman -S android-tools python uv
 uv run --with opencv-python-headless --with numpy main.py
 ```
-> Download tools, uv makes virtual environment in its own bin and runs the script (```uv cache clean``` to remove it)
+> Downloads tools, uv makes virtual environment in its own bin and runs the script (```uv cache clean``` to remove it)
+
 ### Research
 Programs/Libraries found for automation: 
 - Airtest Project (ADB, Android Debug Bridge)
