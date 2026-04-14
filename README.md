@@ -17,15 +17,15 @@ Program
 ### Girls' Frontline
 - Combat Sim-
 
-1. Passive
+1. Passive (Ignore)
 - Complete 3 Combat Simulations (Not including Coalition Drills).
 - Perform an exploration at the Foward Basecamp.
 - Complete 3 Coalition Drills.
 - Complete 3 Logistics Missions.
 
 2. Auto
-- Perform 3 Enhancements or Developments.(FIX ENHANCE DOLLS NOT EQUIPMENT)
-- Perform 3 Equipment or Fairy Enhancements.
+- Perform 3 Enhancements or Developments. (IN PROGRESS)
+- Perform 3 Equipment or Fairy Enhancements.-
 - Perform Equipment or Fairy Calibration once.-
 - Like 5 players' Dormitories.-
 - Give a gift to a T-Doll or Coalition Unit.-
@@ -87,12 +87,12 @@ Arknights
 
 ---
 
-### Setup SikuliX in VSCode
+### Setup SikuliX in VSCode (Discontinued)
 https://launchpad.net/sikuli/+download
 - sikulixide-2.0.5-win.jar (separate ide)
 - sikulixapi-2.0.5-win.jar (for vscode)
 
-#### Run Script On Windows 
+#### Run Script On Windows
 - Cancel script: CTRL + ALT + C
 - (preference, place jar file and script folder in the same directory):
     
@@ -106,7 +106,7 @@ https://launchpad.net/sikuli/+download
 
 ---
 
-### Setup AnkuLua in Waydroid:
+### Setup AnkuLua in Waydroid (Discontinued)
 
 https://github.com/casualsnek/waydroid_script
 > Install magisk > Magisk Delta > Settings (Cog) > App-Hide the Magisk app
@@ -123,8 +123,21 @@ sudo mount --bind ~/Documents/Scripts ~/.local/share/waydroid/data/media/0/Downl
 ### Setup Python + OpenCV + ADB
 ```
 sudo pacman -S android-tools python uv
-uv run --with opencv-python-headless --with numpy main.py
+waydroid prop set persist.waydroid.adb true
+waydroid session stop
+waydroid show-full-ui
+adb connect 192.168.240.112:5555
+adb devices
+waydroid status
 ```
+> Initial Install
+
+```
+uv run --with opencv-python --with numpy GFLDailies.py
+uv run --with opencv-python --with numpy PNCDailies.py
+```
+> Run macros
+
 > Downloads tools, uv makes virtual environment in its own bin and runs the script (```uv cache clean``` to remove it)
 
 ### Research

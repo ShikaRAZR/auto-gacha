@@ -52,7 +52,7 @@ def auto_dailies_1():
         if click_random_img("menu-top.png"):
             click_random_img("menu-top-research.png")
             click_random_img("component-enhancement.png")
-    # Perform 3 Enhancements or Developments. (WRONG)
+    # Perform 3 Equipment or Fairy Enhancements.
     click_random_img("equipment-enhancement.png")
     click_random_img("select-equip.png")
     click_random_img("icon-equipment.png")
@@ -238,10 +238,12 @@ auto_dailies_2()
 auto_dailies_3()
 semi_dailies_1()
 '''
-#do_combat_simulation_1()
-#do_combat_simulation_2()
-#auto_dailies_1()
-#auto_dailies_2()
-#auto_dailies_3()
+
+# Perform 3 Enhancements or Developments. (IN PROGRESS)
+do_combat_simulation_1()
+do_combat_simulation_2()
+auto_dailies_1()
+auto_dailies_2()
+auto_dailies_3()
 semi_dailies_1()
 
