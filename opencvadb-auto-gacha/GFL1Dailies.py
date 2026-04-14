@@ -2,7 +2,9 @@ from myLib import *
 import os
 set_game_img_folder("GFLImages")
 
-# Girl's Frontline - 1080p, windows 11, mumuplayer, gfl snap on top right
+# uv run --with opencv-python --with numpy GFLDailies.py
+
+# Girl's Frontline - 720p, waydroid
 def do_combat_simulation_1():
     data_mode = 3 # Basic = 1, Intermediate = 2, Advanced = 3
     # Go to Combat Simulation
