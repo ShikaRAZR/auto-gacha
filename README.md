@@ -2,13 +2,11 @@
 
 Automating gacha dailies for certain games.
 
-Program
-- Sikulix (python, java) (Discontinued)
-- AnkuLua (Discontinued)
+### Program/Requirements
 - Python, OpenCV, ADB
+- Waydroid
 
-### Main Features:
-- Select which window to focus on for each respective game
+### Features:
 - Check boxes to select which game to automate
 - Say what was sucessfully done, what failed, what was skipped
 
@@ -133,7 +131,7 @@ waydroid status
 > Initial Install
 
 ```
-uv run --with opencv-python --with numpy GFLDailies.py
+uv run --with opencv-python --with numpy GFL1Dailies.py
 uv run --with opencv-python --with numpy PNCDailies.py
 ```
 > Run macros

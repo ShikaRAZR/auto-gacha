@@ -28,7 +28,7 @@ def do_combat_simulation_1():
         click_random_img("add-simulation.png", repeat=4, rand_start=0.1, rand_end=0.5)
     click_random_img("smart-sweep.png")
     click_random_img("ok-button.png")
-    click_random_img("combat-bottom-2.png")
+    click_random_img("combat-bottom-3.png")
 
 def do_combat_simulation_2():
     # Coalition Drill
@@ -43,7 +43,7 @@ def do_combat_simulation_2():
     click_random_img("add-simulation.png", repeat=4, rand_start=0.1, rand_end=0.5)
     click_random_img("smart-sweep.png")
     click_random_img("ok-button.png")
-    click_random_img("combat-bottom-2.png")
+    click_random_img("combat-bottom-3.png")
     click_random_img("back.png")
 
 def auto_dailies_1():
@@ -193,10 +193,10 @@ def semi_dailies_1():
         wait(2)
         click_random_img("combat-chapter-1.png")
     wait(2)
-    click_random_img("combat-normal-2.png")
     # Complete any 2 stages (Auto-Battles are not counted)
     # Use Support Echelons Twice.
     for i in range(2):
+        click_random_img("combat-normal-2.png")
         click_random_img("combat-chapter-1-1.png")
         click_random_img("combat-normal-battle.png")
         wait(2)

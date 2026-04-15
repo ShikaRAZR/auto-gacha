@@ -163,7 +163,8 @@ def auto_dailies_3():
     '''
 
 def auto_dailies_4():
-    click_random_img("menu-top.png")
+    if not exists_similar_img("menu-top-operation-system.png"):
+        click_random_img("menu-top.png")
     click_random_img("menu-top-explore.png")
     wait(3)
     # Spend 150 Keys
