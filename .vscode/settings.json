@@ -1,7 +1,6 @@
 {
     "gutterpreview.sourceFolders": [
-        "opencvadb-auto-gacha/GFLImages"
+        "opencvadb-auto-gacha/GFLImages",
+        "opencvadb-auto-gacha/PNCImages"
     ],
-    "gutterpreview.imagePreviewMaxHeight": 200,
-    "gutterpreview.imagePreviewMaxWidth": 400
 }

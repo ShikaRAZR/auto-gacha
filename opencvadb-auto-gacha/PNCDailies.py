@@ -153,14 +153,12 @@ def auto_dailies_3():
     while exists_similar_img("menu-top-claim-rewards.png"):
         click_random_img("menu-top-claim-rewards.png")
     click_random_img("menu-top-operation-system.png")
-    '''
     # Check Battle Pass
     click_random_img("menu-top-battle-pass.png")
     wait(2)
     click_random_img("battle-pass-collect.png")
-    click_random_img("battle-pass-confirm.png")
+    #click_random_img("battle-pass-confirm.png")
     click_random_img("battle-pass-bottom.png", repeat=3, rand_start=0.5, rand_end=1.0)
-    '''
 
 def auto_dailies_4():
     if not exists_similar_img("menu-top-operation-system.png"):

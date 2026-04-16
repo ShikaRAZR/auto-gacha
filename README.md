@@ -12,7 +12,108 @@ Automating gacha dailies for certain games.
 
 ---
 
-### Girls' Frontline
+### Setup Python + OpenCV + ADB
+```
+sudo pacman -S android-tools python uv
+waydroid prop set persist.waydroid.adb true
+waydroid session stop
+waydroid show-full-ui
+adb connect 192.168.240.112:5555
+adb devices
+waydroid status
+```
+> Initial Install
+
+```
+uv run --with opencv-python --with numpy opencvadb-auto-gacha/GFL1Dailies.py
+uv run --with opencv-python --with numpy opencvadb-auto-gacha/PNCDailies.py
+```
+> Run macros
+
+> Downloads tools, uv makes virtual environment in its own bin and runs the script (```uv cache clean``` to remove it)
+
+---
+
+<details>
+<summary>Girls' Frontline</summary>
+
+Passive
+- Complete a total of 10 Logistics missions--
+
+Daily
+- Complete 12 Combat Simulations or Coalition Drills--
+- Perform a total of 5 Forward Basecamp Explorations--
+
+Weekly
+- Perform a total of 8 productions of any kind (Doll, Equipment or Fairy)--
+- Eliminate a total of 50 Normal Units--
+- Eliminate 1 Boss Unit--
+- Win 8 Battle with S ranks--
+
+Ignore
+- Capture a total of 15 nodes in Gray Zone Exploration
+- Perform 1 purchase
+- Perform a total of 8 Capture Operations (either Standard Captures or Aided)
+
+Other
+- Frontline Protocol Collect (Battlepass)
+</details>
+
+---
+
+<details>
+<summary>Project Neural Cloud</summary>
+
+Passive
+- Log into the game
+- Reach 50 Daily Activity
+
+Auto
+- Upgrade Doll with Combat EXP Once-
+- Collect Oasis Resources Once-
+- Complete 2 Resource Collections-
+- Complete 1 Factory Order-
+- Attempt Fragment Search Twice(100% PROGRESS MORE DOLLS)
+- Clear Vulnerability Check Once-
+- Spend 150 Keys-
+- Clear Exception Protocol Cleanup Once-
+
+Ignore
+- Replenish Keys 1 time
+- Clear Endless Exploration Once
+- Attempt Algorithm Collection twice
+
+Custom
+- Neural Search Basic-
+- Supply Store-
+- Collect Rewards-
+- Check Battle Pass-
+</details>
+
+---
+
+### Later To-Do:
+
+Girls'Frontline Neural Cloud
+Arknights
+
+---
+
+### Research
+Programs/Libraries found for automation: 
+- Airtest Project (ADB, Android Debug Bridge)
+- SikuliX
+- AnkuLua
+- PyAutoGUI
+- OpenCV-Python
+- RapidOCR
+- YOLO26 (Deep Learning/AI)
+
+
+
+<details>
+<summary>Discontinued</summary>
+
 - Combat Sim-
 
 1. Passive (Ignore)
@@ -49,42 +150,6 @@ Perform 2 Doll Productions. ----
 
 ---
 
-### Project Neural Cloud
-
-Passive
-- Log into the game
-- Reach 50 Daily Activity
-
-Auto
-- Upgrade Doll with Combat EXP Once-
-- Collect Oasis Resources Once-
-- Complete 2 Resource Collections-
-- Complete 1 Factory Order-
-- Attempt Fragment Search Twice(100% PROGRESS MORE DOLLS)
-- Clear Vulnerability Check Once-
-- Spend 150 Keys-
-- Clear Exception Protocol Cleanup Once-
-
-Ignore
-- Replenish Keys 1 time
-- Clear Endless Exploration Once
-- Attempt Algorithm Collection twice
-
-Custom
-- Neural Search Basic-
-- Supply Store-
-- Collect Rewards-
-- Check Battle Pass-
-
----
-
-### Later To-Do:
-
-Girls'Frontline Neural Cloud
-Arknights
-
----
-
 ### Setup SikuliX in VSCode (Discontinued)
 https://launchpad.net/sikuli/+download
 - sikulixide-2.0.5-win.jar (separate ide)
@@ -118,32 +183,4 @@ sudo mount --bind ~/Documents/Scripts ~/.local/share/waydroid/data/media/0/Downl
 
 ---
 
-### Setup Python + OpenCV + ADB
-```
-sudo pacman -S android-tools python uv
-waydroid prop set persist.waydroid.adb true
-waydroid session stop
-waydroid show-full-ui
-adb connect 192.168.240.112:5555
-adb devices
-waydroid status
-```
-> Initial Install
-
-```
-uv run --with opencv-python --with numpy GFL1Dailies.py
-uv run --with opencv-python --with numpy PNCDailies.py
-```
-> Run macros
-
-> Downloads tools, uv makes virtual environment in its own bin and runs the script (```uv cache clean``` to remove it)
-
-### Research
-Programs/Libraries found for automation: 
-- Airtest Project (ADB, Android Debug Bridge)
-- SikuliX
-- AnkuLua
-- PyAutoGUI
-- OpenCV-Python
-- RapidOCR
-- YOLO26 (Deep Learning/AI)
+</details>
