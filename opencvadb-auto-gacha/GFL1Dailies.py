@@ -45,16 +45,26 @@ def do_combat_simulation_2():
     click_random_img("smart-sweep.png")
     click_random_img("ok-button.png")
     click_random_img("combat-bottom-3.png")
+    if click_random_img("menu-top.png"):
+        click_random_img("menu-top-main-menu.png")
     wait(3)
 
 
 def auto_dailies_1():
-    if click_random_img("menu-top.png"):
+    # Go to Shop
+    click_random_img("main-shop.png")
+    wait(5)
+    # Collect 5 Hearts. (Kalina Shop)
+    while(exists_similar_img("icon-heart.png")):
+        click_random_img("icon-heart.png")
+    if click_random_img("menu-top.png", similarity=0.6):
         click_random_img("menu-top-forward-basecamp.png")
+    wait(2)
     # Perform a total of 5 Forward Basecamp Explorations
     click_random_img("forward-basecamp-explore.png")
     if exists_similar_img("cancel-button.png"):
         click_random_img("cancel-button.png")
+    
 
 def auto_weeklies_1():     
     # Perform a total of 8 productions of any kind (Doll, Equipment or Fairy)
@@ -153,8 +163,8 @@ def auto_weeklies_2():
 
 
 
-do_combat_simulation_1()
-do_combat_simulation_2()
+#do_combat_simulation_1()
+#do_combat_simulation_2()
 auto_dailies_1()
 #auto_weeklies_1()
 #auto_weeklies_2()

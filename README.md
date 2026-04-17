@@ -109,7 +109,7 @@ Programs/Libraries found for automation:
 - RapidOCR
 - YOLO26 (Deep Learning/AI)
 
-
+---
 
 <details>
 <summary>Discontinued</summary>
