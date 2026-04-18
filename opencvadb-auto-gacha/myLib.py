@@ -40,12 +40,13 @@ import time
 # Config
 WAYDROID_IP   = "192.168.240.112:5555"   # Waydroid IP
 # Debug Directory
-'''
+DEBUG_PATH = None
+
 DEBUG_DIR  = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Debug")
 DEBUG_PATH = os.path.join(DEBUG_DIR, "screen_debug.png")
 os.makedirs(DEBUG_DIR, exist_ok=True) # Makes Directory if it doesnt exist
-'''
-DEBUG_PATH = None
+
+
 # Image Directory
 MAIN_DIR  = os.path.dirname(os.path.abspath(__file__))
 IMG_DIR: str = None

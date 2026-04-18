@@ -157,7 +157,7 @@ def auto_dailies_3():
     click_random_img("menu-top-battle-pass.png")
     wait(2)
     click_random_img("battle-pass-collect.png")
-    #click_random_img("battle-pass-confirm.png")
+    click_random_img("battle-pass-confirm.png")
     click_random_img("battle-pass-bottom.png", repeat=3, rand_start=0.5, rand_end=1.0)
 
 def auto_dailies_4():
@@ -195,10 +195,10 @@ auto_dailies_3()
 auto_dailies_4()
 '''
 
-# Add monthly store png, battlepass pngs, exception pngs
+# Add monthly store png, exception pngs
 auto_dailies_1()
 auto_dailies_2()
 auto_dailies_3()
 auto_dailies_4()
-
+print("-----------DONE-----------")
 

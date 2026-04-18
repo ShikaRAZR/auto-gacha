@@ -163,8 +163,9 @@ def auto_weeklies_2():
 
 
 
-#do_combat_simulation_1()
-#do_combat_simulation_2()
+do_combat_simulation_1()
+do_combat_simulation_2()
 auto_dailies_1()
 #auto_weeklies_1()
 #auto_weeklies_2()
+print("-----------DONE-----------")
