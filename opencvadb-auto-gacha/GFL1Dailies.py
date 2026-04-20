@@ -150,7 +150,7 @@ def auto_weeklies_2():
         # Scroll
         template_coord=exists_similar_img("combat-scroll.png")
         rx, ry = get_random_coordinates(template_coord[0], template_coord[1], template_coord[2], template_coord[3])
-        scroll(rx,ry, distance_px= 400, repeat = 5, duration_ms = 300, direction = "down")
+        scroll(rx,ry, distance_px= 400, repeat = 4, duration_ms = 1000, direction = "down")
         click_random_img("combat-command-post-enemy.png")
         click_random_img("combat-next-round.png")
         click_random_img("execute-plan.png")
@@ -166,6 +166,8 @@ def auto_weeklies_2():
 do_combat_simulation_1()
 do_combat_simulation_2()
 auto_dailies_1()
-#auto_weeklies_1()
-#auto_weeklies_2()
+'''
+auto_weeklies_1()
+auto_weeklies_2()
+'''
 print("-----------DONE-----------")
