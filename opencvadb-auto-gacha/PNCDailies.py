@@ -6,6 +6,7 @@ set_game_img_folder("PNCImages")
 
 # Project Neural Cloud - 720p, waydroid
 def auto_dailies_1():
+    print("-----------auto_dailies_1-----------")
     # Upgrade Doll with Combat EXP Once
     if not click_random_img("doll-info.png"):
         click_random_img("menu-top.png")
@@ -38,6 +39,7 @@ def auto_dailies_1():
         click_random_img("factory-repeat-order.png")
 
 def auto_dailies_2():
+    print("-----------auto_dailies_2-----------")
     click_random_img("menu-top.png")
     drag_random_img_to_dst("menu-top-operation-system.png", "menu-top-sub-system.png")
     wait(1)
@@ -101,6 +103,7 @@ def auto_dailies_2():
 
 
 def auto_dailies_3():
+    print("-----------auto_dailies_3-----------")
     # Supply Store
     click_random_img("menu-top.png")
     click_random_img("menu-top-supplies.png")
@@ -161,6 +164,7 @@ def auto_dailies_3():
     click_random_img("battle-pass-bottom.png", repeat=3, rand_start=0.5, rand_end=1.0)
 
 def auto_dailies_4():
+    print("-----------auto_dailies_4-----------")
     if not exists_similar_img("menu-top-operation-system.png"):
         click_random_img("menu-top.png")
     click_random_img("menu-top-explore.png")

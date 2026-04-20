@@ -6,6 +6,7 @@ set_game_img_folder("GFLImages")
 
 # Girl's Frontline - 720p, waydroid
 def do_combat_simulation_1():
+    print("-----------do_combat_simulation_1-----------")
     data_mode = 3 # Basic = 1, Intermediate = 2, Advanced = 3
     # Go to Combat Simulation
     if not click_random_img("main-combat.png"):
@@ -31,6 +32,7 @@ def do_combat_simulation_1():
     click_random_img("combat-bottom-3.png")
 
 def do_combat_simulation_2():
+    print("-----------do_combat_simulation_2-----------")
     # Complete 12 Combat Simulations or Coalition Drills
     # Coalition Drill
     click_random_img("coalition-drill.png")
@@ -51,6 +53,7 @@ def do_combat_simulation_2():
 
 
 def auto_dailies_1():
+    print("-----------auto_dailies_1-----------")
     # Go to Shop
     click_random_img("main-shop.png")
     wait(5)
@@ -66,7 +69,8 @@ def auto_dailies_1():
         click_random_img("cancel-button.png")
     
 
-def auto_weeklies_1():     
+def auto_weeklies_1():
+    print("-----------auto_weeklies_1-----------")
     # Perform a total of 8 productions of any kind (Doll, Equipment or Fairy)
     if not click_random_img("main-combat.png"):
         if click_random_img("menu-top.png"):
@@ -85,6 +89,7 @@ def auto_weeklies_1():
 
 
 def auto_weeklies_2():
+    print("-----------auto_weeklies_2-----------")
     # Eliminate a total of 50 Normal Units
     # Eliminate 1 Boss Unit
     # Win 8 Battle with S ranks
