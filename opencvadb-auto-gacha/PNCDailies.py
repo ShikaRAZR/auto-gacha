@@ -89,8 +89,8 @@ def auto_dailies_2():
         click_random_img("exception-back.png", auto_wait_timeout=15)
         wait(5)
         click_random_img("exception-rewards.png")
-        while exists_similar_img("exception-rewards-tap.png"):
-            click_random_img("exception-rewards-tap.png")
+        while exists_similar_img("exception-rewards-tap.png", similarity=0.7):
+            click_random_img("exception-rewards-tap.png", similarity=0.7)
         while exists_similar_img("exception-reward-box.png", similarity=0.99):
             click_random_img("exception-reward-box.png", similarity=0.99)
         click_random_img("exception-reward-box.png", repeat=4, rand_start=0.5, rand_end=1.0)
