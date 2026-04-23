@@ -61,6 +61,7 @@ def auto_dailies_1():
     while(exists_similar_img("icon-heart.png")):
         click_random_img("icon-heart.png")
     if click_random_img("menu-top.png", similarity=0.6):
+        drag_random_img_to_dst("menu-top-factory.png", "menu-top-combat.png")
         click_random_img("menu-top-forward-basecamp.png")
     wait(2)
     # Perform a total of 5 Forward Basecamp Explorations
