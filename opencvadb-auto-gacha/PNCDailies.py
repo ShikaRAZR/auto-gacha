@@ -116,12 +116,12 @@ def auto_dailies_3():
         click_random_img("supply-pack-free-button.png")
         click_random_img("store-top.png", repeat=2, rand_start=0.5, rand_end=1.0)
         wait(1)
-    '''
+    
     if click_random_img("supply-pack-free-monthly.png", auto_wait_timeout=2):
         click_random_img("supply-pack-free-button.png")
         click_random_img("store-top.png", repeat=2, rand_start=0.5, rand_end=1.0)
         wait(1)
-    '''
+    
     template_coord=exists_similar_img("store-supply-pack-selected.png")
     rx, ry = get_random_coordinates(template_coord[0], template_coord[1], template_coord[2], template_coord[3])
     scroll(rx,ry, distance_px= 200, repeat = 4, duration_ms = 300, direction = "down")
