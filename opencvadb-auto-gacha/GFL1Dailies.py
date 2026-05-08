@@ -7,7 +7,7 @@ set_game_img_folder("GFLImages")
 # Girl's Frontline - 720p, waydroid
 def do_combat_simulation_1():
     print("-----------do_combat_simulation_1-----------")
-    data_mode = 3 # Basic = 1, Intermediate = 2, Advanced = 3
+    data_mode = 2 # Basic = 1, Intermediate = 2, Advanced = 3
     # Go to Combat Simulation
     if not click_random_img("main-combat.png"):
         if click_random_img("menu-top.png"):
@@ -37,11 +37,11 @@ def do_combat_simulation_2():
     # Coalition Drill
     click_random_img("coalition-drill.png")
     found_in_searcharea = False
-    found_in_searcharea = click_random_img_searcharea_below("petri-dish.png","coalition-drill-attack.png", 300, anchor_similarity=0.99)
+    found_in_searcharea = click_random_img_searcharea_below("petri-dish.png","coalition-drill-attack.png", 300, anchor_similarity=0.9)
     if not found_in_searcharea:
-        found_in_searcharea = click_random_img_searcharea_below("training-keycode.png","coalition-drill-attack.png", 300, anchor_similarity=0.99)
+        found_in_searcharea = click_random_img_searcharea_below("training-keycode.png","coalition-drill-attack.png", 300, anchor_similarity=0.9)
     if not found_in_searcharea:
-        found_in_searcharea = click_random_img_searcharea_below("rapid-growth-disk.png","coalition-drill-attack.png", 300, anchor_similarity=0.99)
+        found_in_searcharea = click_random_img_searcharea_below("rapid-growth-disk.png","coalition-drill-attack.png", 300, anchor_similarity=0.9)
     wait(1)
     click_random_img("add-simulation.png", repeat=4, rand_start=0.1, rand_end=0.5)
     click_random_img("smart-sweep.png")
@@ -166,7 +166,6 @@ def auto_weeklies_2():
         click_random_img("repeat-battle.png", repeat = 7, rand_start=.5, rand_end=1)
         click_random_img("skip.png")
     click_random_img("combat-select-operation.png")
-
 
 
 do_combat_simulation_1()
