@@ -169,7 +169,7 @@ def auto_dailies_4():
     click_random_img("menu-top-explore.png")
     wait(3)
     # Spend 150 Keys
-    drag_random_img_to_dst("fragment-search.png", "vulnerability-check.png")
+    drag_random_img_to_dst("fragment-search.png", "menu-top-back.png")
     wait(1)
     click_random_img("resource-collection.png", similarity=0.9)
     if click_random_img("resource-skill.png"):
@@ -199,6 +199,7 @@ auto_dailies_4()
 '''
 
 # Add monthly store png
+
 auto_dailies_1()
 auto_dailies_2()
 auto_dailies_3()
