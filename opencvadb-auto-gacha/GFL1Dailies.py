@@ -167,12 +167,15 @@ def auto_weeklies_2():
         click_random_img("skip.png")
     click_random_img("combat-select-operation.png")
 
+def do_dailies(do_weekly: bool = False):
+    print(do_weekly)
+    do_combat_simulation_1()
+    do_combat_simulation_2()
+    auto_dailies_1()
+    if do_weekly is True:
+        auto_weeklies_1()
+        auto_weeklies_2()
+    print("-----------DONE-----------")
 
-do_combat_simulation_1()
-do_combat_simulation_2()
-auto_dailies_1()
-'''
-auto_weeklies_1()
-auto_weeklies_2()
-'''
-print("-----------DONE-----------")
+
+do_dailies(do_weekly = True)
