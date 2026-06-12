@@ -7,7 +7,7 @@ set_game_img_folder("GFLImages")
 # Girl's Frontline - 720p, waydroid
 def do_combat_simulation_1():
     print("-----------do_combat_simulation_1-----------")
-    data_mode = 2 # Basic = 1, Intermediate = 2, Advanced = 3
+    data_mode = 1 # Basic = 1, Intermediate = 2, Advanced = 3
     # Go to Combat Simulation
     if not click_random_img("main-combat.png"):
         if click_random_img("menu-top.png"):
@@ -167,15 +167,19 @@ def auto_weeklies_2():
         click_random_img("skip.png")
     click_random_img("combat-select-operation.png")
 
-def do_dailies(do_weekly: bool = False):
-    print(do_weekly)
-    do_combat_simulation_1()
-    do_combat_simulation_2()
-    auto_dailies_1()
-    if do_weekly is True:
+def do_dailies(do_daily: bool = True, do_weekly1: bool = False, do_weekly2: bool = False):
+    print(do_daily)
+    print(do_weekly1)
+    print(do_weekly2)
+    if do_daily is True:
+        do_combat_simulation_1()
+        do_combat_simulation_2()
+        auto_dailies_1()
+    if do_weekly1 is True:
         auto_weeklies_1()
+    if do_weekly2 is True:
         auto_weeklies_2()
     print("-----------DONE-----------")
 
 
-do_dailies(do_weekly = True)
+do_dailies(do_daily = False, do_weekly1 = False, do_weekly2 = True)
