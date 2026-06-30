@@ -7,7 +7,7 @@ set_game_img_folder("GFLImages")
 # Girl's Frontline - 720p, waydroid
 def do_combat_simulation_1():
     print("-----------do_combat_simulation_1-----------")
-    data_mode = 1 # Basic = 1, Intermediate = 2, Advanced = 3
+    data_mode = 2 # Basic = 1, Intermediate = 2, Advanced = 3
     # Go to Combat Simulation
     if not click_random_img("main-combat.png"):
         if click_random_img("menu-top.png"):
@@ -114,19 +114,19 @@ def auto_weeklies_2():
     click_random_img("skip.png")
     # Mission
     wait(1)
-    click_random_img("combat-heliport-1.png")
+    click_random_img("combat-heliport-1.png", similarity=0.7)
     click_random_img("echelon-1.png")
     click_random_img("ok-button.png")
     wait(1)
-    click_random_img("combat-heliport-2.png")
+    click_random_img("combat-heliport-2.png", similarity=0.7)
     click_random_img("echelon-2.png")
     click_random_img("ok-button.png")
     wait(1)
-    click_random_img("combat-heliport-3.png")
+    click_random_img("combat-heliport-3.png", similarity=0.7)
     click_random_img("echelon-3.png")
     click_random_img("ok-button.png")
     wait(1)
-    click_random_img("combat-command-post.png")
+    click_random_img("combat-command-post.png", similarity=0.7)
     click_random_img("echelon-4-caution.png")
     click_random_img("ok-button.png")
     for i in range(2):
@@ -134,30 +134,30 @@ def auto_weeklies_2():
         click_random_img("start-operation.png")
         # Resupply
         wait(2)
-        click_random_img("combat-command-post-team.png", repeat = 2, rand_start=.5, rand_end=1)
+        click_random_img("combat-command-post-team.png", repeat = 2, rand_start=.5, rand_end=1, similarity=0.7)
         click_random_img("resupply.png")
         click_random_img("combat-scroll.png")
         wait(1)
-        click_random_img("combat-heliport-1-team.png", repeat = 2, rand_start=.5, rand_end=1)
+        click_random_img("combat-heliport-1-team.png", repeat = 2, rand_start=.5, rand_end=1, similarity=0.7)
         click_random_img("resupply.png")
         click_random_img("combat-scroll.png")
         wait(1)
-        click_random_img("combat-heliport-2-team.png", repeat = 2, rand_start=.5, rand_end=1)
+        click_random_img("combat-heliport-2-team.png", repeat = 2, rand_start=.5, rand_end=1, similarity=0.7)
         click_random_img("resupply.png")
         click_random_img("combat-scroll.png")
         wait(1)
-        click_random_img("combat-heliport-3-team.png", repeat = 2, rand_start=.5, rand_end=1)
+        click_random_img("combat-heliport-3-team.png", repeat = 2, rand_start=.5, rand_end=1, similarity=0.7)
         click_random_img("resupply.png")
         click_random_img("combat-scroll.png")
         wait(1)
         click_random_img("planning-mode.png")
-        click_random_img("combat-command-post-team.png")
+        click_random_img("combat-command-post-team.png", similarity=0.7)
         wait(2)
         # Scroll
         template_coord=exists_similar_img("combat-scroll.png")
         rx, ry = get_random_coordinates(template_coord[0], template_coord[1], template_coord[2], template_coord[3])
         scroll(rx,ry, distance_px= 400, repeat = 4, duration_ms = 1000, direction = "down")
-        click_random_img("combat-command-post-enemy.png")
+        click_random_img("combat-command-post-enemy.png", similarity=0.7)
         click_random_img("combat-next-round.png")
         click_random_img("execute-plan.png")
         wait(200)
@@ -182,4 +182,4 @@ def do_dailies(do_daily: bool = True, do_weekly1: bool = False, do_weekly2: bool
     print("-----------DONE-----------")
 
 
-do_dailies(do_daily = False, do_weekly1 = False, do_weekly2 = True)
+do_dailies(do_daily = True, do_weekly1 = False, do_weekly2 = False)
